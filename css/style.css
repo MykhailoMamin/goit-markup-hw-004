@@ -12,6 +12,11 @@
   --accent-color: #e7e9fc;
   --light-color: #f4f4fd;
   --white-background-color: #ffffff;
+  --logo-font-family: "Raleway",
+    sans-serif;
+  --primary-font-family: "Roboto",
+    sans-serif;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 *,
@@ -23,7 +28,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--primary-font-family);
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -60,6 +65,10 @@ h5,
 h6 {
   margin: 0;
   color: var(--dark-color);
+}
+
+address {
+  font-style: normal;
 }
 
 .visually-hidden {
@@ -110,16 +119,30 @@ h6 {
    HEADER SECTION
    ========================================== */
 
-.header-portfolio {
-  border-bottom: var(--accent-color) 1px solid;
+/* LOGO */
+.logo {
+  display: block;
+  padding: 24px 0;
+
+  font-family: var(--logo-font-family);
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.17;
+  text-transform: uppercase;
 }
 
+.logo-accent {
+  color: var(--primary-brand-color);
+}
+
+/* CONTAINER */
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* NAVIGATION */
 .navigation {
   display: flex;
   gap: 76px;
@@ -128,50 +151,57 @@ h6 {
 .navigation-list {
   display: flex;
   gap: 40px;
+  font-weight: 500;
+}
+
+.navigation-link, .contacts-link {
+  display: block;
+  padding: 24px 0;
+  transition: color 250ms var(--timing-function);
 }
 
 .navigation-link {
-  display: block;
-  padding: 24px 0;
+  position: relative;
 }
 
 .navigation-link:hover,
-.navigation-link:focus {
+.navigation-link:focus,
+.contacts-link:hover,
+.contacts-link:focus {
   color: var(--pressed-state-color);
 }
 
-.contacts {
-  font-style: normal;
-}
-
+/* CONTACTS */
 .contacts-list {
   display: flex;
   gap: 40px;
 }
 
 .contacts-link {
-  display: block;
-  padding: 24px 0;
+  color: var(--text-color);
 }
 
-.contacts-link:hover,
-.contacts-link:focus {
+
+.active-link {
   color: var(--pressed-state-color);
 }
 
-.logo {
-  display: inline-block;
-  padding: 24px 0;
+.active-link::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: var(--pressed-state-color);
+  content: "";
 
-  font-family: "Raleway", sans-serif;
-  font-size: 18px;
-  font-weight: 800;
-  line-height: 1.17;
-  text-transform: uppercase;
 }
 
-.span-logo {
-  color: var(--primary-brand-color);
+/* HEADER PORTFOLIO */
+.header-portfolio {
+  border-bottom: var(--accent-color) 1px solid;
 }
 
 /* ==========================================
