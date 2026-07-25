@@ -92,7 +92,12 @@ address {
   margin-right: auto;
 }
 
+.primary-section {
+  padding: 120px 0;
+}
+
 .subtitle {
+  margin-bottom: 72px;
   text-transform: capitalize;
   font-size: 36px;
   font-weight: 700;
@@ -100,7 +105,7 @@ address {
 }
 
 .sub-subtitle {
-  padding-bottom: 8px;
+  margin-bottom: 8px;
   font-size: 20px;
   font-weight: 500;
 }
@@ -211,11 +216,17 @@ address {
 .hero-section {
   padding: 188px 0;
 
+  background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)),
+    url(../images/hero/hero-bg.jpg);
   background-color: var(--dark-color);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero-title {
-  width: 496px;
+  max-width: 496px;
   margin: 0 auto 48px;
 
   font-size: 56px;
@@ -229,12 +240,13 @@ address {
 .hero-button {
   display: block;
   margin: 0 auto;
-
-  min-height: 56px;
-  width: 169px;
+  padding: 16px 32px;
+  min-width: 169px;
+ 
 
   color: var(--white-background-color);
   background-color: var(--primary-brand-color);
+  transition: background-color 250ms var(--timing-function);
 }
 
 .hero-button:hover,
@@ -246,10 +258,6 @@ address {
    ADVANTAGES SECTION
    ========================================== */
 
-.advantages-section {
-  padding: 120px 0;
-}
-
 .advantages-list {
   display: flex;
   gap: 24px;
@@ -259,12 +267,24 @@ address {
   flex-basis: calc((100% - 72px) / 4);
 }
 
-.what-we-do-section {
-  padding-bottom: 120px;
+.icon-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+  height: 112px;
+  margin-bottom: 8px;
+
+  border-radius: 4px;
+  background-color: var(--light-color);
 }
 
-.what-we-do-title {
-  margin-bottom: 72px;
+/* ==========================================
+   WHAT WE DO SECTION
+   ========================================== */
+
+.what-we-do-section {
+  padding-bottom: 120px;
 }
 
 .what-we-do-list {
@@ -278,27 +298,55 @@ address {
    ========================================== */
 
 .team-section {
-  padding: 120px 0;
   background-color: var(--light-color);
 }
 
-.team-title {
-  margin-bottom: 72px;
-}
-
 .team-list {
-  display: flex;
+  display: flex;  
   justify-content: center;
-  text-align: center;
   gap: 24px;
 }
 
 .team-item {
   flex-basis: calc((100% - 72px) / 4);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+      0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  background-color: var(--white-background-color);
+  border-radius: 0px 0px 4px 4px;
 }
 
-.team-images {
-  margin-bottom: 32px;
+.team-info {
+ text-align: center;
+ padding: 32px 0;
+}
+
+.team-text {
+  margin-bottom: 8px; 
+}
+
+.team-social-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.team-social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  width: 40px;
+  height: 40px;
+
+  background-color: var(--primary-brand-color);
+  border-radius: 50%;
+
+  transition: background-color 250ms var(--timing-function);
+}
+
+.team-social-link:hover, .team-social-link:focus {
+  background-color: var(--pressed-state-color);
 }
 
 /* ==========================================
