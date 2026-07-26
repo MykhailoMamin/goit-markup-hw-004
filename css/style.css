@@ -120,6 +120,19 @@ address {
   letter-spacing: 0.04em;
 }
 
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+
+  background-color: var(--primary-brand-color);
+  border-radius: 50%;
+
+  transition: background-color 250ms var(--timing-function);
+}
+
 /* ==========================================
    HEADER SECTION
    ========================================== */
@@ -331,22 +344,45 @@ address {
   gap: 24px;
 }
 
-.team-social-link {
+.social-link:hover, .team-social-link:focus {
+  background-color: var(--pressed-state-color);
+}
+
+/* ==========================================
+   CUSTOMERS SECTION
+   ========================================== */
+
+.customers-list {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 12px;
-  width: 40px;
-  height: 40px;
-
-  background-color: var(--primary-brand-color);
-  border-radius: 50%;
-
-  transition: background-color 250ms var(--timing-function);
+  gap: 24px;
 }
 
-.team-social-link:hover, .team-social-link:focus {
-  background-color: var(--pressed-state-color);
+.customers-item {
+  flex-basis: calc((100% - 120px) / 6);
+}
+
+.customers-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 32px;
+
+  border: 1px solid var(--subtle-text);
+  border-radius: 4px;
+  color: var(--subtle-text);
+
+  transition: border-color 250ms var(--timing-function), color 250ms var(--timing-function);
+}
+
+.customers-link:hover, .customers-link:focus {
+  border-color: var(--pressed-state-color);
+  color: var(--pressed-state-color);
+}
+
+.customers-icon {
+  fill: currentColor;
 }
 
 /* ==========================================
@@ -409,6 +445,11 @@ address {
 }
 
 .footer-brand {
+  display: flex;
+  gap: 120px;
+}
+
+.footer-info {
   width: 264px;
 }
 
@@ -420,4 +461,9 @@ address {
 
 .footer-text {
   color: var(--light-color);
+}
+
+.footer-social-list {
+  display: flex;
+  gap: 16px;
 }
